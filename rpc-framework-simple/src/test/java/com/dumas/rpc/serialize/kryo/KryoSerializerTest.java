@@ -1,6 +1,6 @@
 package com.dumas.rpc.serialize.kryo;
 
-import com.dumas.rpc.remoting.dto.RpcRequest;
+import com.dumas.rpc.provider.remoting.dto.RpcRequest;
 import org.junit.jupiter.api.Test;
 
 import java.util.UUID;
@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class KryoSerializerTest {
 
     @Test
-    public void kryoSerializerTest(){
+    public void testKryoSerializer(){
         RpcRequest target = RpcRequest.builder().methodName("hello")
                 .parameters(new Object[]{"sayHello", "sayHellosayHello"})
                 .interfaceName("com.dumas.rpc.HelloService")

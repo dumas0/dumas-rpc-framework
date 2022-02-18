@@ -31,7 +31,7 @@ public final class ExtensionLoader<T> {
     private final Map<String, Holder<Object>> cachedInstances = new ConcurrentHashMap<>();
     private final Holder<Map<String, Class<?>>> cachedClasses = new Holder<>();
 
-    public ExtensionLoader(Class<?> type) {
+    private ExtensionLoader(Class<?> type) {
         this.type = type;
     }
 
@@ -84,7 +84,7 @@ public final class ExtensionLoader<T> {
         if (clazz == null) {
             throw new RuntimeException("No such extension of name " + name);
         }
-        T instance = (T) EXTENSION_LOADERS.get(clazz);
+        T instance = (T) EXTENSION_INSTANCES.get(clazz);
         if (instance == null) {
             try {
                 EXTENSION_INSTANCES.putIfAbsent(clazz, clazz.newInstance());
@@ -97,7 +97,7 @@ public final class ExtensionLoader<T> {
     }
 
     private Map<String, Class<?>> getExtensionClasses() {
-        // get the loaded extension class from cache
+        // get the loaded extension class from the cache
         Map<String, Class<?>> classes = cachedClasses.get();
         // double check
         if (classes == null) {
@@ -116,7 +116,6 @@ public final class ExtensionLoader<T> {
 
     private void loadDirectory(Map<String, Class<?>> extensionClasses) {
         String fileName = ExtensionLoader.SERVICE_DIRECTORY + type.getName();
-
         try {
             Enumeration<URL> urls;
             ClassLoader classLoader = ExtensionLoader.class.getClassLoader();
@@ -140,7 +139,7 @@ public final class ExtensionLoader<T> {
                 // get index of comment
                 final int ci = line.indexOf('#');
                 if (ci >= 0) {
-                    // string after # is comment so wo ignore it
+                    // string after # is comment so we ignore it
                     line = line.substring(0, ci);
                 }
                 line = line.trim();

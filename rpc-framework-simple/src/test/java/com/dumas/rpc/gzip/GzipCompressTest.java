@@ -1,7 +1,7 @@
 package com.dumas.rpc.gzip;
 
 import com.dumas.rpc.compress.gzip.GzipCompress;
-import com.dumas.rpc.remoting.dto.RpcRequest;
+import com.dumas.rpc.provider.remoting.dto.RpcRequest;
 import com.dumas.rpc.serialize.kryo.KryoSerializer;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class GzipCompressTest {
 
     @Test
-    public void gzipCompressTest(){
+    public void testGzipCompress(){
         GzipCompress gzipCompress = new GzipCompress();
         RpcRequest rpcRequest = RpcRequest.builder().methodName("hello")
                 .parameters(new Object[]{"sayHello", "sayHellosayHello"})

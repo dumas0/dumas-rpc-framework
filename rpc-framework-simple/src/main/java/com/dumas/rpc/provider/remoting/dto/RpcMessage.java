@@ -1,4 +1,4 @@
-package com.dumas.rpc.remoting.dto;
+package com.dumas.rpc.provider.remoting.dto;
 
 import lombok.*;
 
