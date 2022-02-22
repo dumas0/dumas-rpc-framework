@@ -1,6 +1,6 @@
 package com.dumas.rpc.serialize.kryo;
 
-import com.dumas.rpc.provider.remoting.dto.RpcRequest;
+import com.dumas.rpc.remoting.dto.RpcRequest;
 import org.junit.jupiter.api.Test;
 
 import java.util.UUID;

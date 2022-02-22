@@ -1,7 +1,7 @@
 package com.dumas.rpc.gzip;
 
 import com.dumas.rpc.compress.gzip.GzipCompress;
-import com.dumas.rpc.provider.remoting.dto.RpcRequest;
+import com.dumas.rpc.remoting.dto.RpcRequest;
 import com.dumas.rpc.serialize.kryo.KryoSerializer;
 import org.junit.jupiter.api.Test;
 

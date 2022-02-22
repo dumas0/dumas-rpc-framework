@@ -1,7 +1,7 @@
 package com.dumas.rpc.loadbalance.loadbalancer;
 
 import com.dumas.rpc.loadbalance.AbstractLoadBalance;
-import com.dumas.rpc.provider.remoting.dto.RpcRequest;
+import com.dumas.rpc.remoting.dto.RpcRequest;
 import lombok.extern.slf4j.Slf4j;
 
 import java.nio.charset.StandardCharsets;

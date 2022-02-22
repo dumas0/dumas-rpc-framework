@@ -1,7 +1,7 @@
 package com.dumas.rpc.loadbalance;
 
 import com.dumas.rpc.extension.SPI;
-import com.dumas.rpc.provider.remoting.dto.RpcRequest;
+import com.dumas.rpc.remoting.dto.RpcRequest;
 
 import java.util.List;
 

@@ -1,8 +1,8 @@
 package com.dumas.rpc.serialize.kryo;
 
 import com.dumas.rpc.exception.SerializeException;
-import com.dumas.rpc.provider.remoting.dto.RpcRequest;
-import com.dumas.rpc.provider.remoting.dto.RpcResponse;
+import com.dumas.rpc.remoting.dto.RpcRequest;
+import com.dumas.rpc.remoting.dto.RpcResponse;
 import com.dumas.rpc.serialize.Serializer;
 import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Input;

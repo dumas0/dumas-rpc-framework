@@ -9,6 +9,7 @@ import java.io.Serializable;
  * @date 2022/02/16 1:55 PM
  */
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 @Builder

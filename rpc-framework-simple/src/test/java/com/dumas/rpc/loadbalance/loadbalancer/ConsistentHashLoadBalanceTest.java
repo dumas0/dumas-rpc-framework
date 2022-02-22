@@ -4,7 +4,7 @@ import com.dumas.rpc.DemoRpcServiceImpl;
 import com.dumas.rpc.config.RpcServiceConfig;
 import com.dumas.rpc.extension.ExtensionLoader;
 import com.dumas.rpc.loadbalance.LoadBalance;
-import com.dumas.rpc.provider.remoting.dto.RpcRequest;
+import com.dumas.rpc.remoting.dto.RpcRequest;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

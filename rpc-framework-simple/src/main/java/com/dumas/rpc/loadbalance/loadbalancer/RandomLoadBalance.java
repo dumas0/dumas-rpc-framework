@@ -1,7 +1,7 @@
 package com.dumas.rpc.loadbalance.loadbalancer;
 
 import com.dumas.rpc.loadbalance.AbstractLoadBalance;
-import com.dumas.rpc.provider.remoting.dto.RpcRequest;
+import com.dumas.rpc.remoting.dto.RpcRequest;
 
 import java.util.List;
 import java.util.Random;
