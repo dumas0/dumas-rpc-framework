@@ -79,7 +79,7 @@ public class CuratorUtils {
         } catch (Exception e) {
             log.error("get children nodes for path [{}] fail", servicePath);
         }
-        return null;
+        return result;
     }
 
     /**
@@ -131,14 +131,12 @@ public class CuratorUtils {
         RetryPolicy retryPolicy = new ExponentialBackoffRetry(BASE_SLEEP_TIME, MAX_RETRIES);
         zkClient = CuratorFrameworkFactory.builder()
                 // the server to connect to(can be a server list)
-                .connectString(zookeeperAddress)
-                .retryPolicy(retryPolicy)
-                .build();
+                .connectString(zookeeperAddress).retryPolicy(retryPolicy).build();
         zkClient.start();
 
         try {
             // wait 30s until connect to the zookeeper
-            if (zkClient.blockUntilConnected(30, TimeUnit.SECONDS)) {
+            if (!zkClient.blockUntilConnected(30, TimeUnit.SECONDS)) {
                 throw new RuntimeException("Time out waiting to connect to ZK!");
             }
         } catch (InterruptedException e) {

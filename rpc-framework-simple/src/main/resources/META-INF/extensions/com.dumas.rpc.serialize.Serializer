@@ -1,0 +1,2 @@
+kyro=com.dumas.rpc.serialize.kryo.KryoSerializer
+protostuff=com.dumas.rpc.serialize.protostuff.ProtostuffSerializer

@@ -68,7 +68,7 @@ public class NettyRpcServer {
                     protected void initChannel(SocketChannel socketChannel) throws Exception {
                         // 30s 之内没有收到客户端请求的时候才会进行初始化
                         ChannelPipeline pipeline = socketChannel.pipeline();
-                        pipeline.addLast(new IdleStateHandler(30,0,0, TimeUnit.SECONDS));
+                        pipeline.addLast(new IdleStateHandler(30, 0, 0, TimeUnit.SECONDS));
                         pipeline.addLast(new RpcMessageEncoder());
                         pipeline.addLast(new RpcMessageDecoder());
                         pipeline.addLast(serviceHandlerGroup, new NettyRpcServerHandler());

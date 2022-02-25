@@ -43,7 +43,7 @@ public class SocketRpcServer {
             server.bind(new InetSocketAddress(host, PORT));
             CustomShutdownHook.getCustomShutdownHook().clearAll();
             Socket socket;
-            while((socket = server.accept()) != null){
+            while ((socket = server.accept()) != null) {
                 log.info("client connected [{}]", socket.getInetAddress());
                 threadPool.execute(new SocketRpcRequestHandlerRunnable(socket));
             }
